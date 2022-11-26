@@ -1,0 +1,267 @@
+/* Global styles
+-----------------------------------------------*/
+/* @font-face {                     way to introduce any custom font in the css by downloading the file into the local and adding it to the code
+    font-family: "My Font";
+    src: url(../fonts/Caveat-VariableFont_wght.ttf)
+ } */
+
+ html{
+    box-sizing: border-box;
+ }
+ *, *::before, *::after {
+    box-sizing: inherit;    /* for adjusting the box in such a way that it doesn't matter if we add padding or amrgin it won't break the float value*/
+ }
+
+body {
+    color: #343434;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    /* font-size: 15px; */
+    line-height: 1.5;
+ }
+img {
+    width: 300px;
+ }
+a {
+    color: greenyellow;
+ }
+a:hover
+{
+    text-decoration: none;
+ }
+
+h1 {
+    font-size: 80px;
+    margin-bottom: none;
+ }
+h2 {
+    font-size: 40px;
+    line-height: 1;
+ }
+
+ h1, h2 {
+    /* font-family: "My Font"; */
+    font-family: 'Caveat', cursive;
+    font-weight: 400;
+    margin: 0;
+ }
+
+.divider > section {
+    padding: 25px 0;
+    border-bottom: 1px solid black;
+}
+
+.divider > section:last-of-type {
+    border-bottom: none;
+}
+
+.content-wrap {
+    max-width: 800px;
+    width: 85%;
+    margin: 0 auto;
+    padding: 60px 0;
+ }
+
+h3{
+    margin-bottom: 0;
+}
+
+.item-details h3 + p {
+    font-style: italic;
+ }
+
+.item-details h3 ~ p {
+    margin: 0;
+    
+ }
+
+/* profile styles
+-----------------------------------------------*/
+header {
+    background-color: #42d2ff;
+    /* font-family: "My Font"; */
+    font-size: 25px;
+ }
+
+
+/* project
+-----------------------------------------------*/
+.project {
+    background-color: gainsboro;
+ }
+.project a {
+    color: #010b0e;
+    /* background: #0672ff;
+    text-decoration: none;
+    padding: 8px;
+    border-radius: 4px; */
+ }
+.project a:hover {
+    background-color: rgba(47, 48, 97, 80%);
+ }
+.project .btn {
+    background-color: #0672ff;
+    color: azure;
+    padding: 8px;
+    border-radius: 4px;
+    display: inline-block;
+ }
+.project .btn:hover {
+    background-color: rgba(47, 48, 97, 80%);
+ }
+
+ .project-item {
+    overflow: hidden;
+ }
+
+ .project-item h3 {
+    margin-top: 0;
+ }
+
+/* work experience
+-----------------------------------------------*/
+.work {
+    background-color: #68c6ff;
+}
+
+
+/* Education
+-----------------------------------------------*/
+.education {
+    background-image: url(../Images/joanna-kosinska-unsplash.jpg);
+    background-size: cover;
+    background-position: top right;
+    padding-bottom: 80px;
+}
+
+.education p {
+    width: 60%;
+}
+
+
+
+
+/* Global styles
+-----------------------------------------------*/
+footer {
+    background-color: #343434;
+    color: #f7fff7;
+}
+ 
+.contact-list {
+    list-style-type: none;
+    padding: 0;
+ }
+
+ .contact-list a {
+    padding: 10px;
+    display: inline-block;
+ }
+
+
+/* ------------------------------------------------------------------------------------------------------ for btn practice------------------------- */
+
+.container {
+    position: relative;
+    top: 105px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 1200px;
+    text-align: center;
+}
+
+.container .btn {
+    display: inline-block;
+    width: 90px;
+    height: 90px;
+    background: #fff;
+    box-shadow: 0 5px 15px -5px #aaa;
+    margin: 10px;
+    border-radius: 30%;
+    overflow: hidden;
+    position: relative;
+    color: #42d2ff;
+}
+
+.container .btn i {
+    position: relative;
+    z-index: 4;
+    line-height: 90px;
+    font-size: 26px;
+    transition: 0.3s ease-in-out;
+}
+
+.container .btn::before {
+    content: "";
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    background: Linear-gradient (#00c6ff, #0072ff) 
+    transform: rotate (45deg);
+    left: -110%;
+    top: 90%;
+}
+
+.container .btn:hover i {
+    color: #fff;
+    transform: scale(1.3);
+}
+
+.container .btn:hover::before {
+    animation: onHover 6.7s 1;
+    left: -10%;
+    top: -10%;
+}
+@keyframes onhover{
+    0% { 
+      left: -110%;
+      top: 90%;
+    }
+    50% {
+     left: 10%;
+     top: -30%;
+    }
+    100% {
+     top: -10%;
+     left: -10%
+    }
+}
+
+
+/* Responsive
+-----------------------------------------------*/
+@media screen and (min-width: 750px){
+    header, footer {
+        text-align: center;
+    }
+    .project-item img {
+        float: left;
+        margin-right: 15px;
+     }
+
+     .job-item {
+        display: grid;
+        grid-template-columns: 1fr 2fr;      /*for making it in sucha  way that it look like 2nd grid is bigger then 1st we use twise the size*/
+        column-gap: 20px;            /*for spacing we use column gap here*/
+     }
+     .contact-list {
+        display: flex;
+        justify-content: center;
+     }
+}
+
+@media screen and (max-width: 749px) {
+    h1{
+        font-size: 75px;
+        margin-bottom: 20px;
+        line-height: 0.9;
+    }
+    h2{
+        line-height: 1;
+    }
+    .contact-list a {
+        padding: 5px;
+    }
+}
